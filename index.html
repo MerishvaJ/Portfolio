@@ -1,201 +1,423 @@
+Here is your cleaned and properly formatted complete `index.html` code:
+
+```html
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Merishva J | AI & ML Engineer</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="style.css" />
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Merishva J | Portfolio</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+        rel="stylesheet">
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
 </head>
 
 <body>
-<!-- AI Preloader / Welcome Interface -->
-<div id="aiPreloader" class="ai-preloader">
-  <div class="ai-terminal">
-    <p id="aiText">Initializing AI Assistant...</p>
-    <div id="aiCursor">|</div>
-  </div>
-</div>
-<!-- AI Search Interface -->
-<div id="aiSearch" class="ai-search" style="display:none;">
-  <input type="text" id="searchInput" placeholder="Type a section name..." autocomplete="off" />
-  <ul id="suggestions" class="suggestions-list"></ul>
-</div>
 
-<!-- NAVBAR -->
-<nav class="navbar navbar-expand-lg navbar-dark fixed-top bg-dark shadow">
-  <div class="container">
-    <a class="navbar-brand fw-bold" href="#home">Merishva J</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navMenu">
-      <ul class="navbar-nav ms-auto gap-3">
-        <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
-        <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
-        <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
-        <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
-        <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
-      </ul>
-    </div>
-  </div>
-</nav>
+    <!-- ================= NAVBAR ================= -->
 
-<!-- HOME -->
-<section id="home" class="text-center container pt-5 mt-5">
-  <img src="assets/merishva.jpg" class="rounded-circle border border-info shadow-lg mb-4" width="160">
-  <h1 class="fw-bold text-info display-5">Merishva J</h1>
-  <p class="lead text-secondary">AI & ML Engineer • Coimbatore, India</p>
-  <div class="d-flex justify-content-center gap-3">
-    <button onclick="sendEmail()" class="btn btn-outline-info px-4">Hire Me</button>
-    <a href="MerishvaCV.pdf" download class="btn btn-info text-white px-4">Download CV</a>
-  </div>
-</section>
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top custom-navbar">
 
-<!-- ABOUT -->
-<section id="about" class="container text-center py-5 text-light">
-  <h2 class="text-info fw-bold mb-4">About Me</h2>
-  <p class="lead">
-    I’m <strong class="text-info">Merishva J</strong>, an aspiring 
-    <strong class="text-success">AI & ML Engineer</strong> Driven by curiosity and innovation, I am an AI & ML Engineer passionate about transforming data into intelligent solutions. With a solid grounding in machine learning, deep learning, and analytics, I enjoy developing models that generate meaningful insights and automate decision-making. My goal is to build impactful AI applications that enhance industries, empower people, and shape the future of technology.
-  </p>
-</section>
+        <div class="container-fluid">
 
-<!-- PROJECTS -->
-<section id="projects" class="container py-5">
-  <h2 class="text-info fw-bold text-center mb-5">Projects</h2>
+            <a class="navbar-brand fw-bold ms-3 logo-text" href="#home">
+                MERISHVA J
+            </a>
 
-  <div class="row g-4">
+            <button class="navbar-toggler"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#navMenu">
 
-    <!-- PROJECT 1 -->
-    <div class="col-md-6 col-lg-4">
-      <div class="card shadow border-info">
-        <div class="card-body">
-          <h5 class="fw-bold">AI-powered Cow & Buffalo Detection System</h5>
-          <p class="text-muted small">Python • YOLOv8 • Flask • Google Colab</p>
-          <p>
-            A real-time object detection system that identifies and counts cows & buffaloes using
-            YOLOv8 with a custom-trained dataset.
-          </p>
-          
+                <span class="navbar-toggler-icon"></span>
+
+            </button>
+
+            <div class="collapse navbar-collapse justify-content-center"
+                id="navMenu">
+
+                <ul class="navbar-nav gap-4">
+
+                    <li class="nav-item">
+                        <a class="nav-link nav-hover" href="#home">
+                            Home
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link nav-hover" href="#about">
+                            About
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link nav-hover" href="#projects">
+                            Projects
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link nav-hover" href="#skills">
+                            Skills
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link nav-hover" href="#contact">
+                            Contact
+                        </a>
+                    </li>
+
+                </ul>
+
+            </div>
+
         </div>
-      </div>
-    </div>
 
-    <!-- PROJECT 2 -->
-    <div class="col-md-6 col-lg-4">
-      <div class="card shadow border-info">
-        <div class="card-body">
-          <h5 class="fw-bold">E-Commerce Website</h5>
-          <p class="text-muted small">PHP • HTML • CSS • JavaScript • XAMPP</p>
-          <p>
-            A fully functional e-commerce platform with cart, authentication, product pages,
-            and user database integration.
-          </p>
+    </nav>
+
+    <!-- ================= HOME ================= -->
+
+    <section id="home" class="container">
+
+        <div class="row align-items-center min-vh-100 hero-section">
+
+            <div class="col-lg-6 text-center text-lg-start">
+
+                <h1 class="hero-title">
+
+                    Hi, I'm
+                    <span>Merishva J</span>
+
+                </h1>
+
+                <h2 class="hero-subtitle">
+
+                    AI & Data Science Student |
+                    Python Developer |
+                    ML Enthusiast
+
+                </h2>
+
+                <p class="hero-description">
+
+                    Final year B.Tech Artificial Intelligence & Data Science student
+                    with hands-on experience in Machine Learning, Deep Learning,
+                    Python development, and AI-powered application development.
+
+                </p>
+
+                <div class="hero-buttons">
+
+                    <a href="#contact"
+                        class="btn btn-info custom-btn">
+
+                        Hire Me
+
+                    </a>
+
+                    <a href="MerishvaCV.pdf"
+                        download
+                        class="btn btn-outline-light custom-btn">
+
+                        Download CV
+
+                    </a>
+
+                </div>
+
+            </div>
+
+            <div class="col-lg-6 text-center">
+
+                <img src="assets/merishva.jpg"
+                    alt="Merishva"
+                    class="profile-image">
+
+            </div>
+
         </div>
-      </div>
-    </div>
 
-    <!-- PROJECT 3 -->
-    <div class="col-md-6 col-lg-4">
-      <div class="card shadow border-info">
-        <div class="card-body">
-          <h5 class="fw-bold">Blockchain Transaction Dashboard</h5>
-          <p class="text-muted small">Flask • Streamlit • XAMPP</p>
-          <p>
-            A web dashboard visualizing blockchain transaction data, providing insights through 
-            analytics and real-time UI.
-          </p>
+    </section>
+
+    <!-- ================= ABOUT ================= -->
+
+    <section id="about"
+        class="container py-5">
+
+        <h2 class="section-title">
+            About Me
+        </h2>
+
+        <div class="about-card">
+
+            <p>
+
+                I’m <span class="highlight">Merishva J</span>,
+                a final-year Artificial Intelligence & Data Science student
+                passionate about Machine Learning, Backend Development,
+                Data Analytics, and intelligent software systems.
+
+            </p>
+
+            <p>
+
+                I enjoy building AI-powered applications using
+                Python, Flask, Streamlit, TensorFlow,
+                PyTorch, and modern ML frameworks.
+
+            </p>
+
+            <p>
+
+                My interests include Software Development,
+                AI Applications, Computer Vision,
+                Graph Neural Networks, and real-world
+                intelligent systems.
+
+            </p>
+
         </div>
-      </div>
-    </div>
 
-    <!-- PROJECT 4 -->
-    <div class="col-md-6 col-lg-4">
-      <div class="card shadow border-info">
-        <div class="card-body">
-          <h5 class="fw-bold">Fish Weight Prediction</h5>
-          <p class="text-muted small">scikit-learn • Streamlit • ML</p>
-          <p>
-            Predicts fish weight using machine learning regression techniques with visualization
-            and real-time predictions.
-          </p>
+    </section>
+
+    <!-- ================= PROJECTS ================= -->
+
+    <section id="projects"
+        class="container py-5">
+
+        <h2 class="section-title">
+            Projects
+        </h2>
+
+        <div class="row g-4">
+
+            <!-- PROJECT 1 -->
+
+            <div class="col-md-6 col-lg-4">
+
+                <div class="card shadow border-info h-100 bg-dark text-light">
+
+                    <div class="card-body">
+
+                        <h5 class="fw-bold text-info">
+                            ToxGNN — Molecular Toxicity Prediction
+                        </h5>
+
+                        <p class="text-muted small">
+                            Python • RDKit • PyTorch • PyTorch Geometric • Streamlit
+                        </p>
+
+                        <p>
+                            Developed a bond-aware molecular toxicity prediction
+                            system using GINE-based Graph Neural Networks.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- PROJECT 2 -->
+
+            <div class="col-md-6 col-lg-4">
+
+                <div class="card shadow border-info h-100 bg-dark text-light">
+
+                    <div class="card-body">
+
+                        <h5 class="fw-bold text-info">
+                            Blockchain Transaction Dashboard
+                        </h5>
+
+                        <p class="text-muted small">
+                            Flask • Streamlit • XAMPP
+                        </p>
+
+                        <p>
+                            A web dashboard visualizing blockchain transaction
+                            data, providing insights through analytics
+                            and real-time UI.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- PROJECT 3 -->
+
+            <div class="col-md-6 col-lg-4">
+
+                <div class="card shadow border-info h-100 bg-dark text-light">
+
+                    <div class="card-body">
+
+                        <h5 class="fw-bold text-info">
+                            AI-powered Cow & Buffalo Detection System
+                        </h5>
+
+                        <p class="text-muted small">
+                            Python • YOLOv8 • Flask • Google Colab
+                        </p>
+
+                        <p>
+                            A real-time object detection system that identifies
+                            and counts cows & buffaloes using YOLOv8 with
+                            a custom-trained dataset.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- PROJECT 4 -->
+
+            <div class="col-md-6 col-lg-4">
+
+                <div class="card shadow border-info h-100 bg-dark text-light">
+
+                    <div class="card-body">
+
+                        <h5 class="fw-bold text-info">
+                            Fish Weight Prediction
+                        </h5>
+
+                        <p class="text-muted small">
+                            scikit-learn • Streamlit • ML
+                        </p>
+
+                        <p>
+                            Predicts fish weight using machine learning regression
+                            techniques with visualization and real-time predictions.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- PROJECT 5 -->
+
+            <div class="col-md-6 col-lg-4">
+
+                <div class="card shadow border-info h-100 bg-dark text-light">
+
+                    <div class="card-body">
+
+                        <h5 class="fw-bold text-info">
+                            Text Category Classifier
+                        </h5>
+
+                        <p class="text-muted small">
+                            TensorFlow • RNN • Streamlit
+                        </p>
+
+                        <p>
+                            An AI model that classifies text into categories
+                            using RNN deep learning architecture
+                            with saved pickle model deployment.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
         </div>
-      </div>
-    </div>
 
-    <!-- PROJECT 5 -->
-    <div class="col-md-6 col-lg-4">
-      <div class="card shadow border-info">
-        <div class="card-body">
-          <h5 class="fw-bold">Text Category Classifier</h5>
-          <p class="text-muted small">TensorFlow • RNN • Streamlit</p>
-          <p>
-            An AI model that classifies text into categories using RNN deep learning architecture
-            with saved pickle model deployment.
-          </p>
+    </section>
+
+    <!-- ================= SKILLS ================= -->
+
+    <section id="skills"
+        class="container py-5 text-center">
+
+        <h2 class="section-title">
+            Skills
+        </h2>
+
+        <div class="skills-container">
+
+            <span>Python</span>
+            <span>Machine Learning</span>
+            <span>Deep Learning</span>
+            <span>TensorFlow</span>
+            <span>PyTorch</span>
+            <span>YOLOv8</span>
+            <span>Flask</span>
+            <span>Streamlit</span>
+            <span>SQL</span>
+            <span>RDKit</span>
+            <span>OpenCV</span>
+            <span>REST APIs</span>
+            <span>Git & GitHub</span>
+
         </div>
-      </div>
-    </div>
 
-  </div>
-</section>
+    </section>
 
+    <!-- ================= CONTACT ================= -->
 
+    <section id="contact"
+        class="container py-5 text-center">
 
-<!-- SKILLS -->
-<section id="skills" class="container p-5 text-center">
-  <h2 class="text-info fw-bold mb-4">Skills</h2>
+        <h2 class="section-title">
+            Contact
+        </h2>
 
-  <h4 class="text-secondary">💻 Hard Skills</h4>
-  <div class="d-flex flex-wrap justify-content-center gap-3 mb-5">
-    <button class="skill-btn btn btn-outline-info">Python</button>
-    <button class="skill-btn btn btn-outline-info">Machine Learning</button>
-    <button class="skill-btn btn btn-outline-info">Deep Learning</button>
-    <button class="skill-btn btn btn-outline-info">TensorFlow</button>
-    <button class="skill-btn btn btn-outline-info">YOLOv8</button>
-    <button class="skill-btn btn btn-outline-info">Computer Vision</button>
-    <button class="skill-btn btn btn-outline-info">OpenCV</button>
-    <button class="skill-btn btn btn-outline-info">Flask</button>
-    <button class="skill-btn btn btn-outline-info">Streamlit</button>
-    <button class="skill-btn btn btn-outline-info">SQL</button>
-    <button class="skill-btn btn btn-outline-info">Scikit-Learn</button>
-    <button class="skill-btn btn btn-outline-info">Data Visualization</button>
-    <button class="skill-btn btn btn-outline-info">Pandas</button>
-    <button class="skill-btn btn btn-outline-info">NumPy</button>
-    <button class="skill-btn btn btn-outline-info">REST API</button>
-    <button class="skill-btn btn btn-outline-info">Git & GitHub</button>
-    <button class="skill-btn btn btn-outline-info">Model Deployment</button>
-    <button class="skill-btn btn btn-outline-info">Jupyter Notebook</button>
-  </div>
+        <p class="contact-text">
 
-  <h4 class="text-secondary">🤝 Soft Skills</h4>
-  <div class="d-flex flex-wrap justify-content-center gap-3">
-    <button class="soft-skill-btn btn btn-outline-light">Communication</button>
-    <button class="soft-skill-btn btn btn-outline-light">Problem Solving</button>
-    <button class="soft-skill-btn btn btn-outline-light">Critical Thinking</button>
-    <button class="soft-skill-btn btn btn-outline-light">Creativity</button>
-    <button class="soft-skill-btn btn btn-outline-light">Adaptability</button>
-    <button class="soft-skill-btn btn btn-outline-light">Leadership</button>
-    <button class="soft-skill-btn btn btn-outline-light">Team Collaboration</button>
-    <button class="soft-skill-btn btn btn-outline-light">Time Management</button>
-  </div>
+            Open to internships, software development,
+            AI projects, and ML opportunities.
 
-  <button id="showAll" class="btn btn-secondary mt-4">Show All Projects</button>
-</section>
+        </p>
 
-<!-- CONTACT -->
-<section id="contact" class="container text-center py-5">
-  <h2 class="text-info fw-bold mb-4">Contact</h2>
-  <p>Open to collaborations, internships, and AI projects.</p>
-  <button class="btn btn-info text-white px-4" onclick="sendEmail()">Send Email</button>
-</section>
+        <a href="mailto:merishva.j.1@gmail.com"
+            class="btn btn-info custom-btn">
 
-<footer class="text-center text-secondary py-4">
-  © 2025 Merishva J • AI & ML Engineer
-</footer>
+            Send Email
 
-<script src="script.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+        </a>
+
+    </section>
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer>
+
+        © 2026 Merishva J • Portfolio
+
+    </footer>
+
+    <!-- JS -->
+
+    <script src="script.js"></script>
+
+    <!-- Bootstrap JS -->
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
 </body>
+
 </html>

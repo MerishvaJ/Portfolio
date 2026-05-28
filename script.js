@@ -1,172 +1,216 @@
-// ========== TYPEWRITER EFFECT ==========
-const titleText = "AI & ML Engineer | Computer Vision | Deep Learning Enthusiast";
-let index = 0;
+/* =========================
+   AI PRELOADER
+========================= */
 
-function typeEffect() {
-  if (index < titleText.length) {
-    document.querySelector(".lead.text-secondary").innerHTML = titleText.substring(0, index + 1);
-    index++;
-    setTimeout(typeEffect, 60);
-  }
-}
-typeEffect();
+const loader = document.createElement("div");
+loader.id = "ai-loader";
 
+loader.innerHTML = `
+    <div class="loader-circle"></div>
+    <div class="loader-text">INITIALIZING AI ENVIRONMENT...</div>
+`;
 
-// ========== EMAIL FUNCTION ==========
-function sendEmail() {
-  window.location.href = "mailto:merishvajd@gmail.com";
-}
+document.body.appendChild(loader);
 
-// ========== DARK/LIGHT MODE ==========
-const themeBtn = document.createElement("button");
-themeBtn.className = "theme-toggle";
-themeBtn.innerHTML = "🌙";
-document.body.appendChild(themeBtn);
-
-themeBtn.addEventListener("click", () => {
-  document.body.classList.toggle("light-theme");
-  themeBtn.innerHTML = document.body.classList.contains("light-theme") ? "☀️" : "🌙";
-  localStorage.setItem("theme", document.body.classList.contains("light-theme") ? "light" : "dark");
-});
-
-if (localStorage.getItem("theme") === "light") {
-  document.body.classList.add("light-theme");
-  themeBtn.innerHTML = "☀️";
-}
-
-// ========== PROJECT DATA ==========
-const projectsData = [
-  { 
-    id:"cow", 
-    title: "AI-powered Cow & Buffalo Detection System", 
-    skills: ["Python", "YOLOv8", "Flask", "Computer Vision"], 
-    link:"#projects" 
-  },
-  { 
-    id:"ecom", 
-    title: "E-Commerce Website", 
-    skills: ["PHP", "HTML", "CSS", "JavaScript", "XAMPP"], 
-    link:"#projects" 
-  },
-  { 
-    id:"blockchain", 
-    title: "Blockchain Transaction Dashboard", 
-    skills: ["Flask", "Streamlit", "XAMPP"], 
-    link:"#projects" 
-  },
-  { 
-    id:"fish", 
-    title: "Fish Weight Prediction", 
-    skills: ["scikit-learn", "Streamlit", "Machine Learning"], 
-    link:"#projects" 
-  },
-  { 
-    id:"text", 
-    title: "Text Category Classifier", 
-    skills: ["TensorFlow", "RNN", "Deep Learning"], 
-    link:"#projects" 
-  }
-];
-
-const projectContainer = document.querySelectorAll(".card-body");
-
-// ========== SKILL BUTTON INTERACTION + AUTO REDIRECT ==========
-document.querySelectorAll(".skill-btn").forEach(btn => {
-  btn.addEventListener("click", () => {
-    const skill = btn.innerText.toLowerCase();
-
-    // Find matching project
-    const matchedProject = projectsData.find(project =>
-      project.skills.some(s => s.toLowerCase() === skill)
-    );
-
-    if (matchedProject) {
-      // Scroll to project
-      const card = [...document.querySelectorAll(".card-body")]
-        .find(c => c.innerText.toLowerCase().includes(matchedProject.title.toLowerCase()));
-
-      if (card) {
-        card.scrollIntoView({ behavior: "smooth" });
-        card.classList.add("highlight");
-
-        setTimeout(() => card.classList.remove("highlight"), 2500);
-      }
-
-      // Optional Redirect / open detail popup
-      setTimeout(() => {
-        alert(`📌 This skill belongs to:\n\n${matchedProject.title}`);
-      }, 800);
-    }
-  });
-});
-
-// ========== SHOW ALL PROJECTS BUTTON ==========
-document.getElementById("showAll").addEventListener("click", () => {
-  document.getElementById("projects").scrollIntoView({ behavior: "smooth" });
-});
-// ===== AI PRELOADER =====
-const aiText = "Welcome, User. Initializing AI Environment...";
-let aiIndex = 0;
-const aiElement = document.getElementById("aiText");
-const aiCursor = document.getElementById("aiCursor");
-
-function typeAIText() {
-  if(aiIndex < aiText.length){
-    aiElement.innerHTML += aiText.charAt(aiIndex);
-    aiIndex++;
-    setTimeout(typeAIText, 50); // typing speed
-  } else {
-    setTimeout(() => {
-      document.getElementById("aiPreloader").style.display = "none";
-    }, 1000); // preloader disappears after 1s
-  }
-}
-
-// Start AI Preloader typing effect
 window.addEventListener("load", () => {
-  aiElement.innerHTML = ""; // reset
-  typeAIText();
-});
-// ===== AI Search Post-Initialization =====
-const sections = ["Home", "About", "Projects", "Skills", "Contact"];
-const aiSearchDiv = document.getElementById("aiSearch");
-const searchInput = document.getElementById("searchInput");
-const suggestionsList = document.getElementById("suggestions");
 
-// Show search after AI typing finishes
-function showSearch() {
-  aiPreloader.style.display = "none";  // hide preloader
-  aiSearchDiv.style.display = "block"; // show search
-  searchInput.focus();
-}
+    setTimeout(() => {
 
-// Listen to typing in search input
-searchInput.addEventListener("input", () => {
-  const query = searchInput.value.toLowerCase();
-  suggestionsList.innerHTML = "";
+        loader.style.opacity = "0";
+        loader.style.transition = "1s";
 
-  const filtered = sections.filter(sec => sec.toLowerCase().startsWith(query));
-  filtered.forEach(sec => {
-    const li = document.createElement("li");
-    li.textContent = sec;
-    li.addEventListener("click", () => redirectToSection(sec));
-    suggestionsList.appendChild(li);
-  });
+        setTimeout(() => {
+            loader.remove();
+        }, 1000);
+
+    }, 2500);
+
 });
 
-// Handle Enter key press
-searchInput.addEventListener("keydown", (e) => {
-  if (e.key === "Enter") {
-    const value = searchInput.value;
-    if (sections.includes(value)) {
-      redirectToSection(value);
+/* =========================
+   TYPEWRITER EFFECT
+========================= */
+
+const subtitle = document.querySelector(".hero-subtitle");
+
+const text = "AI & Data Science Student | Python Developer | ML Enthusiast";
+
+let i = 0;
+
+subtitle.innerHTML = "";
+
+function typing(){
+
+    if(i < text.length){
+
+        subtitle.innerHTML += text.charAt(i);
+
+        i++;
+
+        setTimeout(typing, 50);
+
     }
-  }
+
+}
+
+typing();
+
+/* =========================
+   NAVBAR SCROLL EFFECT
+========================= */
+
+window.addEventListener("scroll", () => {
+
+    const navbar = document.querySelector(".custom-navbar");
+
+    if(window.scrollY > 50){
+
+        navbar.style.background = "#020617";
+
+        navbar.style.boxShadow = "0 0 20px rgba(56,189,248,0.2)";
+
+    }
+    else{
+
+        navbar.style.background = "rgba(8,24,51,0.9)";
+
+        navbar.style.boxShadow = "none";
+
+    }
+
 });
 
-// Redirect function
-function redirectToSection(section) {
-  const id = section.toLowerCase();
-  aiSearchDiv.style.display = "none"; // hide search
-  document.getElementById(id).scrollIntoView({ behavior: "smooth" });
+/* =========================
+   SCROLL REVEAL ANIMATION
+========================= */
+
+const revealElements = document.querySelectorAll(
+    ".card, .about-card, .skills-container span, .section-title"
+);
+
+function reveal(){
+
+    const trigger = window.innerHeight * 0.85;
+
+    revealElements.forEach(el => {
+
+        const top = el.getBoundingClientRect().top;
+
+        if(top < trigger){
+
+            el.style.opacity = "1";
+            el.style.transform = "translateY(0px)";
+
+        }
+
+    });
+
 }
+
+revealElements.forEach(el => {
+
+    el.style.opacity = "0";
+    el.style.transform = "translateY(50px)";
+    el.style.transition = "0.8s";
+
+});
+
+window.addEventListener("scroll", reveal);
+
+reveal();
+
+/* =========================
+   CUSTOM CURSOR GLOW
+========================= */
+
+const cursor = document.createElement("div");
+
+cursor.classList.add("cursor-glow");
+
+document.body.appendChild(cursor);
+
+document.addEventListener("mousemove", (e) => {
+
+    cursor.style.left = e.clientX + "px";
+
+    cursor.style.top = e.clientY + "px";
+
+});
+
+/* =========================
+   SKILL CLICK EFFECT
+========================= */
+
+document.querySelectorAll(".skills-container span").forEach(skill => {
+
+    skill.addEventListener("click", () => {
+
+        skill.style.transform = "scale(1.2)";
+
+        setTimeout(() => {
+
+            skill.style.transform = "scale(1)";
+
+        }, 300);
+
+    });
+
+});
+
+/* =========================
+   PARTICLE EFFECT
+========================= */
+
+for(let i = 0; i < 30; i++){
+
+    const particle = document.createElement("div");
+
+    particle.style.position = "fixed";
+    particle.style.width = "2px";
+    particle.style.height = "2px";
+    particle.style.background = "#38bdf8";
+    particle.style.left = Math.random() * 100 + "vw";
+    particle.style.top = Math.random() * 100 + "vh";
+    particle.style.opacity = Math.random();
+    particle.style.zIndex = "-1";
+
+    document.body.appendChild(particle);
+
+}
+
+/* =========================
+   SMOOTH ACTIVE NAVBAR
+========================= */
+
+const sections = document.querySelectorAll("section");
+const navLinks = document.querySelectorAll(".nav-link");
+
+window.addEventListener("scroll", () => {
+
+    let current = "";
+
+    sections.forEach(section => {
+
+        const sectionTop = section.offsetTop - 200;
+
+        if(scrollY >= sectionTop){
+
+            current = section.getAttribute("id");
+
+        }
+
+    });
+
+    navLinks.forEach(link => {
+
+        link.classList.remove("active");
+
+        if(link.getAttribute("href").includes(current)){
+
+            link.classList.add("active");
+
+        }
+
+    });
+
+});
